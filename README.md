@@ -49,10 +49,10 @@ When the shell reads the entry, it proceeds through a sequence of operations.
     ls -la
 ```
 In general terms, the shell reads your entry and divides it into words and operators
-```
+
 ls | -la
 ------------ | -------------
-```
+
 The shell then analyzes these tokens in commands and other constructs, redirects the input and output as needed, executes the specified command, waits for the output state of the command, and makes that output status available. for further inspection or processing.
 ```
     total 88
@@ -68,7 +68,7 @@ The shell then analyzes these tokens in commands and other constructs, redirects
 ## Builtin functions
 Function | Description | Usage
 ------------ | ------------- | -------------
-env | Show the environment variables |     To show the environment variables
+name funct | Show the environment variables |     To show the environment variables
 
 ----
 ## Examples
@@ -87,4 +87,3 @@ env | Show the environment variables |     To show the environment variables
 ## Contributors
 * [Manuel Condori](https://github.com/Manuel-condori)
 * [Melisa Rojas](https://github.com/melisarv)
-)
