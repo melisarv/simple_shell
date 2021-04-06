@@ -9,7 +9,7 @@
 See [Unix Shell](https://en.wikipedia.org/wiki/Unix_shell)
 
 ----
-##Requirements
+## Requirements
 * All your files will be compiled on **Ubuntu 14.04 LTS**.
 * Your C programs and functions will be compiled with **gcc 4.8.4** using the flags *-Wall -Werror -Wextra and -pedantic*.
 * All your files should end with a new line.
@@ -32,15 +32,15 @@ README.md | README file
 ### Basic Installation
 simple_shell is installed by running the following commands in your terminal.
 ```
-    git clone https://github.com/kyeeh/simple_shell.git
+    git clone https://github.com/melisarv/simple_shell.git
 ```
 After that simple_shell can compile using
 ```
-    gcc -Wall -Werror -Wextra -pedantic *.c -o simple_shell
+    gcc -Wall -Werror -Wextra -pedantic *.c -o hsh
 ```
 To start, write the following:
 ```
-    ./simple_shell
+    ./hsh
 ```
 ----
 ## Basic operation
@@ -61,17 +61,7 @@ The shell then analyzes these tokens in commands and other constructs, redirects
     drwxrwxr-x  8 vagrant vagrant  4096 Apr 12 18:35 .git
     -rw-rw-r--  1 vagrant vagrant     7 Apr  7 23:28 .gitignore~
     -rw-rw-r--  1 vagrant vagrant    28 Apr  7 23:07 README.md
-    -rw-rw-r--  1 vagrant vagrant   806 Apr 12 12:26 error_handler.c
-    -rw-rw-r--  1 vagrant vagrant   304 Apr 12 12:26 exec.c
-    -rw-rw-r--  1 vagrant vagrant   749 Apr 12 12:26 fork.c
-    -rwxrwxr-x  1 vagrant vagrant 13639 Apr 10 21:27 hsh
-    -rw-rw-r--  1 vagrant vagrant   806 Apr 12 12:26 prompt.c
-    -rw-rw-r--  1 vagrant vagrant   513 Apr 12 12:26 read_line.c
-    -rw-rw-r--  1 vagrant vagrant   827 Apr 12 12:26 shell.c
-    -rw-rw-r--  1 vagrant vagrant   680 Apr 12 12:26 shell.h
-    -rw-rw-r--  1 vagrant vagrant   258 Apr 12 12:26 stat.c
-    -rwxrwxr-x  1 vagrant vagrant 13966 Apr 12 12:26 test
-    -rw-rw-r--  1 vagrant vagrant   161 Apr 12 12:26 util.c
+    se agregran el resto al final...
 ```
 
 ----
