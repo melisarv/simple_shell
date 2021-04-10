@@ -1,0 +1,46 @@
+TH man 1 "06 April 2021" "0.1" "simple_shell man page"
+
+.SH NAME
+.B hsh
+- Holberton simple shell: command line interpreter
+
+.SH SYNOPSIS
+.B ./hsh [options]
+
+.SH DESCRIPTION
+.B hsh
+is a command line interpreter for the system that reads and executes commands from the standard input as a shell would.
+
+.SS OVERVIEW
+This shell is an executable that reads lines from the prompt, interprets them, and generally executes other commands. It runs by compiling all .c files in the repository to create an executable
+
+.SS PATH
+When locating a command, this shell first looks to see if it has an executable by that name in the PATH of env. Then it looks for builtin commands by that name.
+
+.SH OPTIONS
+.B hsh
+would be run in interactive mode by executing the hsh. Once you execute it, a prompt ($ ) will appear waiting for you to type a command followed by an enter. Once you press enter the shell will execute the command and a new prompt ('$') will appear again expecting a new command. Until you type exit or ctrl D.
+.SS
+EXAMPLE:
+$ ls -l
+.B ./hsh
+
+The non-interactive mode uses shell scripts. This includes the use of piping ('|').
+.SS
+EXAMPLE:
+$ echo "ls -l" | ./hsh
+
+.SH BUILT-IN COMMANDS
+.B env
+- prints environment
+.B exit
+- exits the shell
+
+.SH SEE ALSO
+.I sh(1)
+
+.SH BUGS
+No known bugs.
+
+.SH AUTHOR
+Manuel Condori, Melisa Rojas
