@@ -8,18 +8,11 @@
  * Return: 0
  */
 
-int main(int argc, char **argv, char **env)
+int main(__attribute__((unused))int argc,__attribute__((unused)) char **argv, char **env)
 {
 	char *line = NULL;
 	char **args;
 	int status = 1;
-
-	if (!argc)
-		(void)argc;
-	if (!argv)
-		(void)argv;
-	if (!env)
-		(void)env;
 
 	while (status)
 	{
