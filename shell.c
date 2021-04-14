@@ -8,22 +8,26 @@
  * Return: 0
  */
 
-int main(__attribute__((unused))int argc,__attribute__((unused)) char **argv, char **env)
+int main(__attribute__((unused))int argc,
+__attribute__((unused)) char **argv, char **env)
 {
 	char *line = NULL;
 	char **args;
-	int status = 1;
+	int status;
+	int mode_inter = 1;
 
-	while (status)
-	{
-		if (isatty(STDIN_FILENO))
-			write(1, "#cisfun$ ", 9);
+	if (isatty(STDIN_FILENO) != 1)
+		mode_inter = 0;
+
+	do {
+		if (mode_inter != 0)
+			write(STDOUT_FILENO, "#cisfun$ ", 9);
 
 		line = lsh_read_line();
 		args = lsh_split_line(line);
 		status = lsh_execute(args, line, env);
 		free(line);
 		free(args);
-	}
+	} while (status);
 	return (0);
 }
