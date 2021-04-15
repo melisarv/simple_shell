@@ -15,7 +15,7 @@ __attribute__((unused)) char **argv, char **env)
 	char **args;
 	int status;
 	int mode_inter = 1;
-	
+
 	if (isatty(STDIN_FILENO) != 1)
 		mode_inter = 0;
 
@@ -24,7 +24,7 @@ __attribute__((unused)) char **argv, char **env)
 			write(STDOUT_FILENO, "#cisfun$ ", 9);
 
 		line = lsh_read_line();
-		if(line == NULL)
+		if (line == NULL)
 			break;
 
 		args = lsh_split_line(line);
