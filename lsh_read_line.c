@@ -7,9 +7,14 @@ char *lsh_read_line(void)
 {
 	char *line = NULL;
 	size_t bufsize = 0;
+	int temp;
 
-	if (getline(&line, &bufsize, stdin) == -1)
+	temp = getline(&line, &bufsize, stdin);
+	if (temp == EOF)
 	{
+		if (isatty(STDIN_FILENO))
+			write(1, "\n", 1);
+		
 		free(line);
 		return (NULL);
 	}
