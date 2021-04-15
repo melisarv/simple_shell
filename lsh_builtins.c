@@ -20,7 +20,7 @@ int get_builtins(char **args, char *line, char **env)
 
 	while (list[i].arg != NULL)
 	{
-		if (strcmp(list[i].arg, args[0]) == 0)
+		if (_strcmp(list[i].arg, args[0]) == 0)
 		{
 			list[i].builtin(args, line, env);
 			return (1);

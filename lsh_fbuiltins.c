@@ -27,7 +27,7 @@ void lsh_env(char **args, char *line, char **env)
 
 	while (env[i] != NULL)
 	{
-		size = strlen(env[i]);
+		size = _strlen(env[i]);
 		write(1, env[i], size);
 		write(1, "\n", 1);
 		i++;
@@ -46,11 +46,11 @@ void lsh_cd(char **args, char *line, char **env)
 {
 	if (args[1] == NULL)
 	{
-		write(1, "./shell: expected argument to \"cd\"\n", 36);
+		write(1, "hsh: expected argument to \"cd\"\n", 36);
 	} else if (chdir(args[1]) != 0)
-		perror("./shell");
-        (void)args;
-        (void)line;
+		perror("hsh");
+	(void)line;
+	(void)env;
 }
 
 
@@ -66,4 +66,8 @@ void lsh_help(char **args, char *line, char **env)
 	write(1, "project Hoberton School\n", 24);
 	write(1, "Type program names and arguments, and hit enter.\n", 48);
 	write(1, "The following are built in:\n", 27);
+
+	(void)args;
+	(void)line;
+	(void)env;
 }

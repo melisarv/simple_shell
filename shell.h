@@ -32,6 +32,8 @@ void lsh_env(char **args, char *line, char **env);
 void lsh_cd(char **args, char *line, char **env);
 void lsh_help(char **args, char *line, char **env);
 void lsh_exit(char **args, char *line, char **env);
-
+int _strcmp(char *s1, char *s2);
+void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
+int _strlen(char *s);
 
 #endif

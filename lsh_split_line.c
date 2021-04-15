@@ -4,18 +4,19 @@
    *@line: the line
    *Return: Null-terminated array of tokens
  */
-#define LSH_TOK_BUFSIZE 64
-#define LSH_TOK_DELIM " \t\r\n\a"
+
 char **lsh_split_line(char *line)
 {
 	int bufsize = LSH_TOK_BUFSIZE, position = 0;
-	char **tokens = malloc(bufsize * sizeof(char *));
-	char *token, **tokens_backup;
+	char **tokens;
+	char *token;
+
+	tokens = malloc(bufsize * sizeof(char *));
 
 	if (!tokens)
 	{
-		fprintf(stderr, "./shell: allocation error\n");
-		exit(EXIT_FAILURE);
+		perror("hsh: allocation error\n");
+		return (NULL);
 	}
 	token = strtok(line, LSH_TOK_DELIM);
 	while (token != NULL)
@@ -25,13 +26,11 @@ char **lsh_split_line(char *line)
 		if (position >= bufsize)
 		{
 			bufsize += LSH_TOK_BUFSIZE;
-			tokens_backup = tokens;
-			tokens = realloc(tokens, bufsize * sizeof(char *));
+			tokens = _realloc(tokens, bufsize - 64, bufsize * sizeof(char *));
 			if (!tokens)
 			{
-				free(tokens_backup);
-				fprintf(stderr, "./shell: allocation error\n");
-				exit(EXIT_FAILURE);
+				perror("hsh: allocation error\n");
+				return (NULL);
 			}
 		}
 		token = strtok(NULL, LSH_TOK_DELIM);

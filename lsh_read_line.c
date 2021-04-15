@@ -10,13 +10,8 @@ char *lsh_read_line(void)
 
 	if (getline(&line, &bufsize, stdin) == -1)
 	{
-		if (feof(stdin))
-			exit(EXIT_SUCCESS);
-		else
-		{
-			perror("./shell: getline\n");
-			exit(EXIT_FAILURE);
-		}
+		free(line);
+		return (NULL);
 	}
 	return (line);
 }
