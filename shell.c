@@ -1,6 +1,21 @@
 #include "shell.h"
 
 /**
+ * sig_handler - handles ^C signal interupt
+ * @unused: unused variable (required for signal function prototype)
+ *
+ * Return: void
+ */
+static void sig_handler(int unused)
+{
+	(void)unused;
+	if (sig_flag == 0)
+		write(STDOUT_FILENO, "\n#cisfun$ ", 10);
+	else
+		write(1, "\n", 1);
+}
+
+/**
  * main - main function for shell
  * @argc: number of arguments
  * @argv: array of arguments
@@ -15,6 +30,8 @@ __attribute__((unused)) char **argv, char **env)
 	char **args;
 	int status;
 	int mode_inter = 1;
+
+	signal(SIGINT, sig_handler);
 
 	if (isatty(STDIN_FILENO) != 1)
 		mode_inter = 0;

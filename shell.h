@@ -35,5 +35,6 @@ void lsh_exit(char **args, char *line, char **env);
 int _strcmp(char *s1, char *s2);
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
 int _strlen(char *s);
+unsigned int sig_flag;
 
 #endif

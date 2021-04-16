@@ -65,7 +65,7 @@ void lsh_help(char **args, char *line, char **env)
 {
 	write(1, "project Hoberton School\n", 24);
 	write(1, "Type program names and arguments, and hit enter.\n", 48);
-	write(1, "The following are built in:\n", 27);
+	write(1, "The following are built in:\n", 28);
 
 	(void)args;
 	(void)line;
